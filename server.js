@@ -10,8 +10,7 @@ const app = express();
 const PORT = 8000;
 const mongoose = require("mongoose");
 const TodoTask = require('./models/todotask.js');
-const dotenv = require("dotenv");
-dotenv.config();
+require('dotenv').config()
 
 //Set middleware
 app.set('view engine', 'ejs') //template for html
