@@ -9,7 +9,7 @@ const req = require("express/lib/request");
 const app = express();
 const PORT = 8000;
 const mongoose = require("mongoose");
-const TodoTask = require('./models/TodoTask');
+const TodoTask = require('./models/todotask.js');
 require('dotenv').config()
 
 //Set middleware
