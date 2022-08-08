@@ -24,14 +24,6 @@ mongoose.connect(
     () => {console.log('Connected to db!')}
 )
 
-//GET METHOD
-// app.get('/', async(req, res) => { //get root route 
-//     try {
-//         res.render('index.ejs') //ejs uses render instead of sendFile
-//     } catch (error) {
-//         res.status(500).send({message: error.message})
-//     }
-// });
 app.get("/", async (req, res) => {
     try {
         TodoTask.find({}, (err, tasks) => {
