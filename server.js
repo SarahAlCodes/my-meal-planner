@@ -1,8 +1,3 @@
-//npm install express mongoose ejs dotenv
-//npm install --save-dev nodemon
-
-//"start": "nodemon server.js"
-
 //Declare variables
 const express = require("express");
 const req = require("express/lib/request");
