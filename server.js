@@ -27,11 +27,11 @@ mongoose.connect(
 //   }
 // );
 
-app.get("/", async (req, res) => {
+app.get('/', async (req, res) => {
     try {
-        TodoTask.find({}, (err, tasks) => {
-            res.render("index.ejs", { todoTasks: tasks });
-        });
+        await TodoTask.find({}, (err, tasks) => {
+            res.render('index.ejs', {todoTasks: tasks});
+        })
     } catch (err) {
         if (err) return res.status(500).send(err);
     }
