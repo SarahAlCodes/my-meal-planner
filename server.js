@@ -29,13 +29,13 @@ mongoose.connect(
 
 app.get('/', async (req, res) => {
     try {
-        await TodoTask.find({}, (err, tasks) => {
-            res.render('index.ejs', {todoTasks: tasks});
+        TodoTask.find({}, (err, tasks) => {
+            res.render('index.ejs', {TodoTasks: tasks});
         })
     } catch (err) {
         if (err) return res.status(500).send(err);
     }
-})
+});
 
 
 app.post('/', async (req, res) => {
@@ -81,13 +81,13 @@ app
 //Delete
 app
     .route("/remove/:id")
-    .get((req,res) => {
-        const id = req.params.id
+    .get((req, res) => {
+        const id = req.params.id;
         TodoTask.findByIdAndRemove(id, err => {
-            if (err) return res.status(500).send(err);
+            if (err) return res.send(500, err);
             res.redirect("/");
-        })
-    })
+        });
+    });
 
 
 app.listen(process.env.PORT || PORT, ()=>{
