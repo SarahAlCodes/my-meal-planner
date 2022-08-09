@@ -27,17 +27,17 @@ mongoose.connect(
 //   }
 // );
 
-app.get('/', async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         TodoTask.find({}, (err, tasks) => {
-            res.render('index.ejs', {TodoTasks: tasks});
-        })
+            res.render("index.ejs", { todoTasks: tasks });
+        });
     } catch (err) {
         if (err) return res.status(500).send(err);
     }
 });
 
-
+//POST METHOD
 app.post('/', async (req, res) => {
     const todoTask = new TodoTask(
         {
