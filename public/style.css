@@ -6,6 +6,10 @@
 
 body {
     background-image: url('https://images.unsplash.com/photo-1553518137-d567777430b5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=876&q=80');
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; */
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -31,7 +35,8 @@ body {
 h2 {
     padding: 10px;
     font-size: 3rem;
-    color: rgb(206, 117, 0);
+    background: rgba(42, 41, 41, 0.233);
+    color: rgb(255, 145, 0);
     font-family: fantasy;
 }
 
@@ -90,7 +95,7 @@ ul {
 
 .todo-list-item-title{
     font-size: medium;
-    color: rgb(207, 174, 131);
+    color: rgb(233, 172, 92);
 }
 
 .todo-list-item-content {
