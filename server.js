@@ -30,6 +30,7 @@ app.get("/", async (req, res) => {
     }
 });
 
+
 //POST METHOD
 app.post('/', async (req, res) => {
     const todoTask = new TodoTask(
@@ -47,32 +48,6 @@ app.post('/', async (req, res) => {
     }
 });
 
-// app.get('/', async (req, res) => {
-//     try {
-//         TodoTask.find({}, (err, tasks) => {
-//             res.render('index.ejs', {TodoTasks: tasks});
-//         })
-//     } catch (err) {
-//         if (err) return res.status(500).send(err);
-//     }
-// });
-
-
-// app.post('/', async (req, res) => {
-//     const todoTask = new TodoTask(
-//         {
-//             title: req.body.title,
-//             content: req.body.content
-//         });
-//     try {
-//         await todoTask.save();
-//         console.log(todoTask)
-//         res.redirect("/");
-//     } catch (err) {
-//         if (err) return res.status(500).send(err);
-//         res.redirect("/");
-//     }
-// });
 
 //Edit or Update Method
 app
