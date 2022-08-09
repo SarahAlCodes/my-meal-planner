@@ -4,7 +4,7 @@ const req = require("express/lib/request");
 const app = express();
 const PORT = 8000;
 const mongoose = require("mongoose");
-const TodoTask = require('./models/todotask.js');
+const TodoTask = require('./models/todotask');
 require('dotenv').config()
 
 //Set middleware
@@ -14,10 +14,18 @@ app.use(express.urlencoded({extended: true})); //parses urls
 
 //Connect to Mongo
 mongoose.connect(
-    process.env.DB_CONNECTION,
-    {useNewUrlParser: true},
-    () => {console.log('Connected to db!')}
+    process.env.DB_STRING, 
+    { useNewUrlParser: true }, 
+    () => {console.log("Connected to db!");}
 )
+
+// mongoose.connect('mongodb://localhost:27017/usersdb',
+//   {
+//     useNewUrlParser: true,
+//     useFindAndModify: false,
+//     useUnifiedTopology: true
+//   }
+// );
 
 app.get("/", async (req, res) => {
     try {
@@ -82,4 +90,6 @@ app
     })
 
 
-app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
+app.listen(process.env.PORT || PORT, ()=>{
+    console.log(`Server running on port ${PORT}`)
+})
